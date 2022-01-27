@@ -23,7 +23,7 @@ router.post('/', async (req, res) => {
 // Delete Post
 router.delete('/:id', async (req, res) => {
   const posts = await loadPostCollection()
-  await posts.delete({ _id: new mongodb.ObjectId(req.params.id) })
+  await posts.deleteOne({ _id: new mongodb.ObjectId(req.params.id) })
   res.status(200).send()
 })
 
