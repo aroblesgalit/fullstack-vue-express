@@ -1,7 +1,16 @@
 <template>
   <div class="container">
     <h1>Latest Posts</h1>
-    <!-- CREATE POST HERE -->
+    <div class="create-post">
+      <label for="create-post">Say something...</label>
+      <input
+        type="text"
+        id="create-post"
+        v-model="text"
+        placeholder="Create a post"
+      />
+      <button v-on:click="createPost">Post!</button>
+    </div>
     <hr />
     <p class="error" v-if="error">{{ error }}</p>
     <div class="posts-container">
